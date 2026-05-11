@@ -35,12 +35,13 @@ export default function MovieHero({ movie }: Props) {
         {movie.genres && (
           <p className="text-muted text-sm mb-4">{movie.genres}</p>
         )}
-        {/* safeHtml() output — only approved dangerouslySetInnerHTML site in this codebase */}
-        {/* eslint-disable-next-line no-restricted-syntax */}
+        {/* eslint-disable no-restricted-syntax */}
+        {/* safeHtml() sanitizes before this point — only approved usage site */}
         <p
           className="text-sm leading-relaxed text-white/80"
           dangerouslySetInnerHTML={{ __html: safeOverview }}
         />
+        {/* eslint-enable no-restricted-syntax */}
       </div>
     </section>
   )
