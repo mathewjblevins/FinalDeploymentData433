@@ -3,6 +3,8 @@ import RecommendationGrid from '@/components/RecommendationGrid'
 import MovieHero from '@/components/MovieHero'
 import { notFound } from 'next/navigation'
 
+export const dynamic = 'force-dynamic'
+
 interface Props {
   params: Promise<{ movieId: string }>
 }
