@@ -14,7 +14,7 @@ def _to_card(row: dict[str, object]) -> MovieCard:
     path = str(row.get("poster_path") or "")
     poster_url = f"{settings.tmdb_img_base}{path}" if path else None
     return MovieCard(
-        movie_id=int(row["id"]),  # type: ignore[arg-type]
+        movie_id=int(row["id"]),  # type: ignore[call-overload]
         title=str(row.get("title", "")),
         overview=str(row.get("overview", "")),
         genres=str(row.get("genres", "")),
@@ -40,8 +40,8 @@ async def recommend(
             detail=f"Movie {body.movie_id} not found",
         )
 
-    source = _to_card(result["source"])  # type: ignore[arg-type]
-    recs = [_to_card(r) for r in result["recommendations"]]  # type: ignore[arg-type]
-    scores: list[float] = result["scores"]  # type: ignore[assignment]
+    source = _to_card(result["source"])
+    recs = [_to_card(r) for r in result["recommendations"]]
+    scores: list[float] = result["scores"]
 
     return RecommendResponse(source=source, recommendations=recs, scores=scores)

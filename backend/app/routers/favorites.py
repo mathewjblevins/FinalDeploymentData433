@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from typing import Any, cast
+
 from fastapi import APIRouter, HTTPException, Request, status
 from supabase import Client, create_client
 
@@ -32,6 +34,7 @@ async def get_favorites(request: Request, user: CurrentUser) -> FavoritesRespons
     client = _client(jwt)
 
     resp = client.table("favorites").select("*").order("added_at", desc=True).execute()
+    rows = cast(list[dict[str, Any]], resp.data or [])
     favs = [
         FavoriteOut(
             movie_id=int(r["movie_id"]),
@@ -39,7 +42,7 @@ async def get_favorites(request: Request, user: CurrentUser) -> FavoritesRespons
             poster_path=r.get("poster_path"),
             added_at=r["added_at"],
         )
-        for r in (resp.data or [])
+        for r in rows
     ]
     return FavoritesResponse(favorites=favs)
 

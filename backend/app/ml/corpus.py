@@ -28,7 +28,7 @@ async def get_corpus() -> pd.DataFrame:
             movies = await fetch_popular_movies(pages=settings.corpus_pages)
             _df = pd.DataFrame(movies).drop_duplicates(subset="id").reset_index(drop=True)
             _movie_id_set.update(int(i) for i in _df["id"])
-    return _df  # type: ignore[return-value]
+    return _df
 
 
 async def ensure_movie(movie_id: int) -> tuple[pd.DataFrame, bool]:
@@ -52,12 +52,12 @@ async def ensure_movie(movie_id: int) -> tuple[pd.DataFrame, bool]:
             new_row = pd.DataFrame([movie])
             _df = pd.concat([_df, new_row], ignore_index=True)
             _movie_id_set.add(movie_id)
-            return _df, True  # type: ignore[return-value]
+            return _df, True
 
-    return _df, False  # type: ignore[return-value]
+    return _df, False
 
 
-def build_features(df: pd.DataFrame) -> pd.Series:  # type: ignore[type-arg]
+def build_features(df: pd.DataFrame) -> "pd.Series[str]":
     """Combine overview + genres (genres weighted 3×) into a single feature string."""
     overviews = df["overview"].fillna("").astype(str)
     genres = df["genres"].fillna("").astype(str)

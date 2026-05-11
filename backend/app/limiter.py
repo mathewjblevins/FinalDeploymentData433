@@ -4,7 +4,7 @@ from slowapi.util import get_remote_address
 from app.settings import settings
 
 
-def _key_func(request: object) -> str:  # type: ignore[misc]
+def _key_func(request: object) -> str:
     user_id = getattr(getattr(request, "state", None), "user_id", None)
     if user_id:
         return str(user_id)

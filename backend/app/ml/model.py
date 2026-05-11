@@ -24,7 +24,7 @@ async def _rebuild(df: pd.DataFrame) -> np.ndarray:
     features = build_features(df)
     tfidf = TfidfVectorizer(stop_words="english", max_features=5000)
     tfidf_matrix = tfidf.fit_transform(features)
-    return cosine_similarity(tfidf_matrix)
+    return np.asarray(cosine_similarity(tfidf_matrix))
 
 
 async def get_recommendations(
