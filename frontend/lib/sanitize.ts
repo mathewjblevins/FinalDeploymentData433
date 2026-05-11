@@ -1,16 +1,18 @@
-import DOMPurify from 'isomorphic-dompurify'
+const ALLOWED: Set<string> = new Set(['i', 'em', 'b', 'strong', 'br'])
+
+function stripTags(raw: string, allowed: Set<string> = new Set()): string {
+  return raw
+    .replace(/<\/?([a-z][a-z0-9]*)\b[^>]*/gi, (match, tag: string) =>
+      allowed.has(tag.toLowerCase()) ? match : ''
+    )
+    .replace(/>/g, (ch) => (allowed.size > 0 ? ch : ''))
+}
 
 /**
- * Safe HTML wrapper — the only approved path for rendering user-controlled or
- * external HTML (e.g., TMDB overview text that may contain <i> tags).
- * Never use dangerouslySetInnerHTML without going through this function.
+ * Safe HTML — only approved path for dangerouslySetInnerHTML.
+ * Allows a small inline formatting allowlist; strips everything else.
  */
-export const safeHtml = (raw: string): string =>
-  DOMPurify.sanitize(raw, {
-    ALLOWED_TAGS: ['i', 'em', 'b', 'strong', 'br'],
-    ALLOWED_ATTR: [],
-  })
+export const safeHtml = (raw: string): string => stripTags(raw, ALLOWED)
 
-/** Strip all HTML — for use in contexts where no markup is wanted. */
-export const plainText = (raw: string): string =>
-  DOMPurify.sanitize(raw, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] })
+/** Strip all HTML — use for text nodes where no markup is needed. */
+export const plainText = (raw: string): string => stripTags(raw)
