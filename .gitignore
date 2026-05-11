@@ -1,0 +1,58 @@
+# Environment
+.env
+.env.local
+.env.production
+.env*.local
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+.uv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+.pnpm-store/
+.pnpm-debug.log
+
+# Supabase
+.supabase/
+
+# Secrets
+*.pem
+*.key
+*.p12
+secrets.toml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+.idea/
+*.swp
+
+# Gitleaks
+.gitleaks.toml
+
+# Logs
+*.log

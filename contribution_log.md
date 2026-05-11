@@ -1,0 +1,66 @@
+# CineMatch — Contribution Log
+
+Honest, commit-by-commit record of who did what. Per course policy, individual scores reflect individual contributions.
+
+---
+
+## Milestone 1 — Project Proposal
+
+| Date | Contributor | Contribution |
+|---|---|---|
+| Jan 2026 | Mathew Blevins | Project concept, TMDB API research, proposal write-up, submission |
+
+---
+
+## Milestone 2 — Data Pipeline
+
+| Date | Contributor | Contribution |
+|---|---|---|
+| Feb 2026 | Mathew Blevins | TMDB API integration, pandas data pipeline, initial TF-IDF prototype |
+| Feb 2026 | Mathew Blevins | Pivot from Kaggle TMDB dataset to live TMDB API after DMCA takedown |
+
+---
+
+## Milestone 3 — Modeling & Deck
+
+| Date | Contributor | Contribution |
+|---|---|---|
+| Mar 2026 | Mathew Blevins | TF-IDF + cosine similarity model, ablation vs. CountVectorizer, pptxgenjs deck |
+| Mar 2026 | Mathew Blevins | Genres × 3 weighting feature engineering |
+
+---
+
+## Milestone 4 — Streamlit Deployment
+
+| Date | Contributor | Contribution |
+|---|---|---|
+| Apr 2026 | Mathew Blevins | Streamlit app (`app.py`), Netflix-inspired UI, dynamic corpus fallback, Streamlit Cloud deployment |
+| Apr 2026 | Mathew Blevins | Resolved build hang caused by tightly pinned `requirements.txt` — moved to loose pins |
+
+---
+
+## Milestone 5 — Final Product (May 10–14, 2026)
+
+| Date | Contributor | Contribution |
+|---|---|---|
+| 2026-05-10 | Mathew Blevins | Initialized git repo, directory skeleton, `.gitignore`, `CLAUDE.md` |
+| 2026-05-10 | Mathew Blevins | Moved legacy `app.py` to `backend/legacy_streamlit_app.py` |
+| 2026-05-10 | Mathew Blevins | Built FastAPI backend: `settings.py`, `schemas.py`, `security.py`, `deps.py`, `limiter.py` |
+| 2026-05-10 | Mathew Blevins | Ported ML pipeline to `backend/app/ml/` (tmdb.py, corpus.py, model.py) preserving dynamic corpus fallback |
+| 2026-05-10 | Mathew Blevins | Implemented all API routers: `/health`, `/trending`, `/search`, `/recommend`, `/favorites` |
+| 2026-05-10 | Mathew Blevins | Wrote Supabase SQL migrations with RLS policies (`supabase/migrations/0001_init.sql`) |
+| 2026-05-10 | Mathew Blevins | Wrote backend Dockerfile (multi-stage, <250 MB) and `pyproject.toml` |
+| 2026-05-10 | Mathew Blevins | Wrote pytest test suite: 24/24 tests passing; ruff + mypy clean |
+| 2026-05-11 | Mathew Blevins | Scaffolded Next.js 15 frontend: `package.json`, `tsconfig.json`, Tailwind config |
+| 2026-05-11 | Mathew Blevins | Built all frontend pages: landing, search, recommend/[movieId], library, login, about |
+| 2026-05-11 | Mathew Blevins | Built all frontend components: Header, Footer, SearchBar, MovieCard, MovieHero, RecommendationGrid |
+| 2026-05-11 | Mathew Blevins | Wired CSP headers via `next.config.js`; implemented `lib/sanitize.ts` (DOMPurify wrapper) |
+| 2026-05-11 | Mathew Blevins | Wrote all docs: architecture, security, deployment, cost, data, model, ai-usage |
+| 2026-05-11 | Mathew Blevins | Generated 13-slide pptxgenjs deck (`presentation/cinematch_milestone5.pptx`) |
+| 2026-05-11 | Mathew Blevins | Wrote README and this contribution log |
+
+---
+
+## Note on Team Composition
+
+Tyler Johnson and Joseph Scheele are listed teammates. To date, all technical work has been performed by Mathew Blevins. This log will be updated if either teammate makes verified contributions (commits with attribution) before the final submission. Peer evaluations submitted separately will reflect this accurately.

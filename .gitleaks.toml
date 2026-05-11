@@ -1,0 +1,14 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Allow TMDB placeholder in .env.example"
+paths = [
+  '''.env.example''',
+]
+
+[[allowlists]]
+description = "Allow test values in test conftest"
+paths = [
+  '''backend/tests/conftest.py''',
+]

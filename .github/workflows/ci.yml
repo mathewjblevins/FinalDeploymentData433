@@ -1,0 +1,91 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  backend:
+    name: Backend — lint, types, tests
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Install uv
+        run: pip install uv
+
+      - name: Install deps
+        run: uv pip install --system -e ".[dev]"
+        env:
+          TMDB_API_KEY: test_key
+          SUPABASE_JWT_SECRET: test_jwt_secret_that_is_long_enough_32chars
+          SUPABASE_URL: https://test.supabase.co
+          SUPABASE_ANON_KEY: test_anon_key
+
+      - name: Ruff lint
+        run: uv run ruff check app/
+
+      - name: Mypy
+        run: uv run mypy app
+
+      - name: Tests
+        run: uv run pytest --cov=app --cov-report=xml
+        env:
+          TMDB_API_KEY: test_key
+          SUPABASE_JWT_SECRET: test_jwt_secret_that_is_long_enough_32chars
+          SUPABASE_URL: https://test.supabase.co
+          SUPABASE_ANON_KEY: test_anon_key
+
+  frontend:
+    name: Frontend — types, lint
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install deps
+        run: pnpm install --ignore-scripts
+
+      - name: Type check
+        run: pnpm exec tsc --noEmit
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: https://test.supabase.co
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: test_anon_key
+          NEXT_PUBLIC_API_URL: http://localhost:8000
+
+  secrets:
+    name: Secret scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Gitleaks
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITLEAKS_LICENSE: ${{ secrets.GITLEAKS_LICENSE }}
