@@ -10,8 +10,8 @@
 
 | Service | URL |
 |---|---|
-| **Frontend (production)** | _Add after Vercel deploy_ |
-| **Backend API** | _Add after Render deploy_ |
+| **Frontend (production)** | [final-deployment-data433.vercel.app](https://final-deployment-data433.vercel.app/) |
+| **Backend API** | [finaldeploymentdata433.onrender.com](https://finaldeploymentdata433.onrender.com) |
 | **Legacy v1 (Streamlit)** | [cinematch-ecpkof7qdeuacyfewyiffa.streamlit.app](https://cinematch-ecpkof7qdeuacyfewyiffa.streamlit.app/) |
 | **Slide deck** | [presentation/cinematch_milestone5.pptx](presentation/cinematch_milestone5.pptx) |
 

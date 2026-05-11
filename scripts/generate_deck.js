@@ -161,7 +161,7 @@ s3.addText('Live Demo', { x: 0.4, y: 0.15, w: 12.53, h: 0.8, fontSize: 28, bold:
 s3.addText([
   { text: '🎬 ', options: { fontSize: 72 } },
 ], { x: 5.5, y: 1.5, w: 2.5, h: 2 })
-s3.addText('cinematch-[hash].vercel.app', {
+s3.addText('final-deployment-data433.vercel.app', {
   x: 1, y: 3.8, w: 11.33, h: 0.7,
   fontSize: 26, color: ACCENT, align: 'center', fontFace: 'Calibri',
 })
@@ -317,8 +317,8 @@ s12.addShape(pptx.ShapeType.rect, { x: 0, y: 0, w: '100%', h: 1.1, fill: { color
 s12.addText('Links & Resources', { x: 0.4, y: 0.15, w: 12.53, h: 0.8, fontSize: 28, bold: true, color: WHITE, fontFace: 'Georgia' })
 
 const links = [
-  ['Production App (Vercel)', 'cinematch-[hash].vercel.app', ACCENT],
-  ['Backend API (Render)', 'cinematch-api.onrender.com/docs', MUTED],
+  ['Production App (Vercel)', 'final-deployment-data433.vercel.app', ACCENT],
+  ['Backend API (Render)', 'finaldeploymentdata433.onrender.com/docs', MUTED],
   ['Legacy v1 (Streamlit)', 'cinematch-ecpkof7qdeuacyfewyiffa.streamlit.app', MUTED],
   ['GitHub Repo', 'github.com/[your-username]/cinematch', MUTED],
 ]

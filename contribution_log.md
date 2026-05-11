@@ -58,6 +58,10 @@ Honest, commit-by-commit record of who did what. Per course policy, individual s
 | 2026-05-11 | Mathew Blevins | Wrote all docs: architecture, security, deployment, cost, data, model, ai-usage |
 | 2026-05-11 | Mathew Blevins | Generated 13-slide pptxgenjs deck (`presentation/cinematch_milestone5.pptx`) |
 | 2026-05-11 | Mathew Blevins | Wrote README and this contribution log |
+| 2026-05-11 | Mathew Blevins | Pushed repo to GitHub (`mathewjblevins/FinalDeploymentData433`) |
+| 2026-05-11 | Mathew Blevins | Deployed backend to Render (`finaldeploymentdata433.onrender.com`); resolved pydantic-settings ALLOWED_ORIGINS parse error and Dockerfile path issue |
+| 2026-05-11 | Mathew Blevins | Deployed frontend to Vercel (`final-deployment-data433.vercel.app`); fixed Next.js 15 async params, force-dynamic pages, ESLint block disable, replaced isomorphic-dompurify with server-safe sanitizer |
+| 2026-05-11 | Mathew Blevins | Applied Supabase migrations; wired production env vars across Render + Vercel |
 
 ---
 

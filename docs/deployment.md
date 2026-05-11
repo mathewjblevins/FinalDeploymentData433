@@ -4,8 +4,8 @@
 
 | Service | Platform | URL pattern |
 |---|---|---|
-| Frontend | Vercel Hobby | `https://cinematch-[hash].vercel.app` |
-| Backend | Render free web service | `https://cinematch-api.onrender.com` |
+| Frontend | Vercel Hobby | [final-deployment-data433.vercel.app](https://final-deployment-data433.vercel.app/) |
+| Backend | Render free web service | [finaldeploymentdata433.onrender.com](https://finaldeploymentdata433.onrender.com) |
 | Database | Supabase free tier | `https://[project].supabase.co` |
 | Legacy v1 | Streamlit Community Cloud | `https://cinematch-ecpkof7qdeuacyfewyiffa.streamlit.app` |
 
