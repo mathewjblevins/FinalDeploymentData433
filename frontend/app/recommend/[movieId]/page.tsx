@@ -4,11 +4,12 @@ import MovieHero from '@/components/MovieHero'
 import { notFound } from 'next/navigation'
 
 interface Props {
-  params: { movieId: string }
+  params: Promise<{ movieId: string }>
 }
 
 export async function generateMetadata({ params }: Props) {
-  const id = Number(params.movieId)
+  const { movieId } = await params
+  const id = Number(movieId)
   if (isNaN(id)) return { title: 'Not Found' }
   try {
     const data = await getRecommendations(id, 12)
@@ -19,7 +20,8 @@ export async function generateMetadata({ params }: Props) {
 }
 
 export default async function RecommendPage({ params }: Props) {
-  const id = Number(params.movieId)
+  const { movieId } = await params
+  const id = Number(movieId)
   if (isNaN(id) || id <= 0) notFound()
 
   let data
