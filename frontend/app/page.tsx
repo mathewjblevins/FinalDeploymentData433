@@ -2,6 +2,8 @@ import { getTrending } from '@/lib/api'
 import RecommendationGrid from '@/components/RecommendationGrid'
 import SearchBar from '@/components/SearchBar'
 
+export const dynamic = 'force-dynamic'
+
 export default async function HomePage() {
   let trending = null
   try {

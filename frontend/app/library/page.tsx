@@ -3,6 +3,8 @@ import { redirect } from 'next/navigation'
 import { getFavorites } from '@/lib/api'
 import Link from 'next/link'
 
+export const dynamic = 'force-dynamic'
+
 export default async function LibraryPage() {
   const supabase = await createClient()
   const {
