@@ -19,7 +19,7 @@ services:
         sync: false
       - key: REDIS_URL
         sync: false
-      - key: ALLOWED_ORIGINS
+      - key: ALLOWED_ORIGINS_RAW
         sync: false
       - key: ENVIRONMENT
         value: production

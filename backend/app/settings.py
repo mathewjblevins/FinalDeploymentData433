@@ -1,9 +1,6 @@
 import json
 
-from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
-
-_DEFAULT_ORIGINS = ["http://localhost:3000"]
 
 
 class Settings(BaseSettings):
@@ -11,7 +8,10 @@ class Settings(BaseSettings):
     supabase_jwt_secret: str
     supabase_url: str
     supabase_anon_key: str
-    allowed_origins: list[str] = _DEFAULT_ORIGINS
+    # Stored as a raw string so pydantic-settings never tries to JSON-parse it.
+    # Use the `allowed_origins` property everywhere; set ALLOWED_ORIGINS in env
+    # as either JSON ("["url"]") or comma-separated ("url1,url2").
+    allowed_origins_raw: str = "http://localhost:3000"
     redis_url: str | None = None
     tmdb_base_url: str = "https://api.themoviedb.org/3"
     tmdb_img_base: str = "https://image.tmdb.org/t/p/w500"
@@ -24,16 +24,14 @@ class Settings(BaseSettings):
         case_sensitive=False,
     )
 
-    @field_validator("allowed_origins", mode="before")
-    @classmethod
-    def parse_origins(cls, v: object) -> object:
-        if not isinstance(v, str):
-            return v
-        v = v.strip()
+    @property
+    def allowed_origins(self) -> list[str]:
+        v = self.allowed_origins_raw.strip()
         if not v:
-            return _DEFAULT_ORIGINS
+            return ["http://localhost:3000"]
         try:
-            return json.loads(v)
+            result = json.loads(v)
+            return result if isinstance(result, list) else [str(result)]
         except json.JSONDecodeError:
             return [o.strip() for o in v.split(",") if o.strip()]
 

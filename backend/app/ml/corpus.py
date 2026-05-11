@@ -57,7 +57,7 @@ async def ensure_movie(movie_id: int) -> tuple[pd.DataFrame, bool]:
     return _df, False
 
 
-def build_features(df: pd.DataFrame) -> "pd.Series[str]":
+def build_features(df: pd.DataFrame) -> pd.Series[str]:
     """Combine overview + genres (genres weighted 3×) into a single feature string."""
     overviews = df["overview"].fillna("").astype(str)
     genres = df["genres"].fillna("").astype(str)
