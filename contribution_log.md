@@ -62,9 +62,3 @@ Honest, commit-by-commit record of who did what. Per course policy, individual s
 | 2026-05-11 | Mathew Blevins | Deployed backend to Render (`finaldeploymentdata433.onrender.com`); resolved pydantic-settings ALLOWED_ORIGINS parse error and Dockerfile path issue |
 | 2026-05-11 | Mathew Blevins | Deployed frontend to Vercel (`final-deployment-data433.vercel.app`); fixed Next.js 15 async params, force-dynamic pages, ESLint block disable, replaced isomorphic-dompurify with server-safe sanitizer |
 | 2026-05-11 | Mathew Blevins | Applied Supabase migrations; wired production env vars across Render + Vercel |
-
----
-
-## Note on Team Composition
-
-Tyler Johnson and Joseph Scheele are listed teammates. To date, all technical work has been performed by Mathew Blevins. This log will be updated if either teammate makes verified contributions (commits with attribution) before the final submission. Peer evaluations submitted separately will reflect this accurately.
