@@ -1,8 +1,7 @@
 # CineMatch — Project Context (carried forward from Milestones 1–4)
 
 ## Owner & team
-- **Owner / sole effective contributor:** Mathew Blevins (Valparaiso University, Spring 2025, DATA 433).
-- **Listed teammates:** Tyler Johnson, Joseph Scheele. In practice, Mathew has done all the work to date. The contribution log reflects this honestly and should continue to.
+- **Owners** Mathew Blevins, Joseph Scheele, Tyler Johnson (Valparaiso University, Spring 2025, DATA 433).
 - **Course requirement:** semester-long group project culminating in a deployed, marketable ML tool.
 
 ## Product
