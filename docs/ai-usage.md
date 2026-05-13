@@ -6,7 +6,7 @@ This document records all Claude (Anthropic) assistance used in Milestone 5 deve
 
 - **Model:** Claude Sonnet 4.6 (claude-sonnet-4-6) via Claude Code CLI
 - **Date range:** May 10–14, 2026
-- **Operator:** Mathew Blevins (sole contributor)
+- **Operators:** Mathew Blevins, Tyler Johnson, Joseph Scheele
 
 ---
 
@@ -59,8 +59,8 @@ This document records all Claude (Anthropic) assistance used in Milestone 5 deve
 ## What Claude Did Not Do
 
 - Decide the overall architecture (that was in the plan document Mathew wrote pre-session)
-- Choose the ML algorithm (TF-IDF + cosine was validated in Milestone 4 by Mathew)
-- Conduct the actual RLS isolation test (Mathew ran that in the Supabase dashboard)
+- Choose the ML algorithm (TF-IDF + cosine was validated in Milestone 4 by the team)
+- Conduct the actual RLS isolation test (The team ran that in the Supabase dashboard)
 - Execute the deployments to Render and Vercel (Mathew connected the services)
 - Write the peer evaluation or course submission form
 
