@@ -6,8 +6,8 @@
 |---|---|---|
 | Frontend | Vercel Hobby | [final-deployment-data433.vercel.app](https://final-deployment-data433.vercel.app/) |
 | Backend | Render free web service | [finaldeploymentdata433.onrender.com](https://finaldeploymentdata433.onrender.com) |
-| Database | Supabase free tier | `https://[project].supabase.co` |
-| Legacy v1 | Streamlit Community Cloud | `https://cinematch-ecpkof7qdeuacyfewyiffa.streamlit.app` |
+| Database | Supabase free tier | https://api.themoviedb.org/3 |
+| Legacy v1 | Streamlit Community Cloud | https://cinematch-ecpkof7qdeuacyfewyiffa.streamlit.app |
 
 ---
 
