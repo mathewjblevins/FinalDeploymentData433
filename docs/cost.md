@@ -1,4 +1,4 @@
-# CineMatch — Cost Model
+# CineMatch: Cost Model
 
 ## Current Cost: $0/month
 

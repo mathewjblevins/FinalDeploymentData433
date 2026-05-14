@@ -38,10 +38,10 @@ App runs at **http://localhost:3000** · Backend at **http://localhost:8000** ·
 
 ## How It Works
 
-1. **Data** — Movie metadata fetched live from the [TMDB API](https://www.themoviedb.org) (overview, genres, ratings, posters).
-2. **Vectorization** — TF-IDF over a combined text field (overview + genres × 3 weighting).
-3. **Similarity** — Cosine similarity matrix built lazily on first request (keeps cold start < 8s).
-4. **Dynamic fallback** — If you search a movie not in the preloaded corpus, it's fetched from TMDB, appended, and the matrix rebuilds, so search always feels complete.
+1. **Data:** Movie metadata fetched live from the [TMDB API](https://www.themoviedb.org) (overview, genres, ratings, posters).
+2. **Vectorization:** TF-IDF over a combined text field (overview + genres × 3 weighting).
+3. **Similarity:** Cosine similarity matrix built lazily on first request (keeps cold start < 8s).
+4. **Dynamic fallback:** If you search a movie not in the preloaded corpus, it's fetched from TMDB, appended, and the matrix rebuilds, so search always feels complete.
 
 ---
 
@@ -89,4 +89,4 @@ This product uses the [TMDB API](https://www.themoviedb.org) but is not endorsed
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).

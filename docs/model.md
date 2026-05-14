@@ -1,4 +1,4 @@
-# CineMatch — Model Documentation
+# CineMatch: Model Documentation
 
 ## Algorithm
 
@@ -47,8 +47,8 @@ Given a seed movie at position `pos` in the matrix:
 
 | Alternative | Considered? | Why not chosen |
 |---|---|---|
-| Count vectorizer baseline | Yes — ablated | TF-IDF outperforms; penalizes common terms like "story" |
-| Euclidean distance | Yes — ablated | Sensitive to document length; cosine is more robust |
+| Count vectorizer baseline | Yes (ablated) | TF-IDF outperforms; penalizes common terms like "story" |
+| Euclidean distance | Yes (ablated) | Sensitive to document length; cosine is more robust |
 | Word2Vec / GloVe embeddings | No | Adds significant dependency complexity for marginal gain at demo scale |
 | Sentence-transformers (SBERT) | Roadmap v1.1 | Semantically superior but requires GPU/API key; out of scope for this milestone |
 | Collaborative filtering | Roadmap v1.1 | Requires user behavior data; cold start problem |

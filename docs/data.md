@@ -1,4 +1,4 @@
-# CineMatch — Data Documentation
+# CineMatch: Data Documentation
 
 ## Data Source
 

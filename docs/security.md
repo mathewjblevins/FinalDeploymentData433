@@ -1,4 +1,4 @@
-# CineMatch — Security Documentation
+# CineMatch: Security Documentation
 
 ## Security Non-Negotiables
 
@@ -59,7 +59,7 @@ Key function: user ID if authenticated, remote IP otherwise.
 
 **Result:** Confirmed: User B receives an empty favorites list. User A's data is completely isolated.
 
-**Screenshot:** `docs/security/rls-isolation.png` — shows the Supabase SQL editor returning 0 rows for User B's session.
+**Screenshot:** `docs/security/rls-isolation.png` (Supabase SQL editor returning 0 rows for User B's session).
 
 ---
 
@@ -72,7 +72,7 @@ Defense is layered across both tiers:
 | Layer | What it does |
 |---|---|
 | React auto-escaping | All TMDB strings rendered as `{value}`, not as HTML. Covers ~95% of surface area. |
-| `safeHtml()` in `lib/sanitize.ts` | DOMPurify allowlist (`i, em, b, strong, br` — no attributes) used for the rare TMDB overview with inline markup. Only path to `dangerouslySetInnerHTML`. |
+| `safeHtml()` in `lib/sanitize.ts` | DOMPurify allowlist (`i, em, b, strong, br`; no attributes) used for the rare TMDB overview with inline markup. Only path to `dangerouslySetInnerHTML`. |
 | Content-Security-Policy | Set via `next.config.js`; see header below. |
 | Input validation | `zod` schema on search query before any network call. |
 | Auth cookies | `HttpOnly`, `Secure`, `SameSite=Lax` (handled by `@supabase/ssr`). |

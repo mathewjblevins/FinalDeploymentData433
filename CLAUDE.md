@@ -1,4 +1,4 @@
-# CLAUDE.md — CineMatch
+# CLAUDE.md: CineMatch
 
 You are working inside the CineMatch monorepo. This file is the source of truth for
 how to operate in this codebase. Read it fully before any non-trivial change.
@@ -37,22 +37,22 @@ provides Postgres, Auth, and Row-Level Security. Deployed on Vercel + Render.
 
 ## Commands
 Frontend (run from `frontend/`):
-- `pnpm dev` — local dev on :3000
-- `pnpm build && pnpm start` — production build
-- `pnpm test` — vitest
-- `pnpm lint` — eslint + tsc --noEmit
-- `pnpm gen:api` — regenerate types from backend OpenAPI
+- `pnpm dev` (local dev, port 3000)
+- `pnpm build && pnpm start` (production build)
+- `pnpm test` (vitest)
+- `pnpm lint` (eslint + tsc --noEmit)
+- `pnpm gen:api` (regenerate types from backend OpenAPI)
 
 Backend (run from `backend/`):
-- `uv run uvicorn app.main:app --reload` — local dev on :8000
-- `uv run pytest` — tests
-- `uv run ruff check .` — lint
-- `uv run mypy app` — types
+- `uv run uvicorn app.main:app --reload` (local dev, port 8000)
+- `uv run pytest` (tests)
+- `uv run ruff check .` (lint)
+- `uv run mypy app` (types)
 
 DB (run from repo root, requires Supabase CLI):
-- `supabase start` — local Postgres + Studio
-- `supabase db push` — apply migrations
-- `supabase db reset` — wipe + reapply (dev only)
+- `supabase start` (local Postgres + Studio)
+- `supabase db push` (apply migrations)
+- `supabase db reset` (wipe + reapply; dev only)
 
 ## Architecture notes Claude commonly gets wrong
 - The TF-IDF matrix is built **lazily on first request**, not at module import,

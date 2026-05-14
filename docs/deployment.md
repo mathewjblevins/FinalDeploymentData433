@@ -1,4 +1,4 @@
-# CineMatch — Deployment Guide
+# CineMatch: Deployment Guide
 
 ## Architecture Summary
 
@@ -11,7 +11,7 @@
 
 ---
 
-## Backend — Render
+## Backend: Render
 
 ### First deploy
 
@@ -30,7 +30,7 @@
 | `SUPABASE_ANON_KEY` | From Supabase Settings → API → anon key |
 | `SUPABASE_JWT_SECRET` | From Supabase Settings → API → JWT Settings |
 | `REDIS_URL` | Upstash Redis URL (optional; leave blank to use in-memory) |
-| `ALLOWED_ORIGINS` | `["https://your-app.vercel.app","https://cinematch-*.vercel.app"]` |
+| `ALLOWED_ORIGINS_RAW` | `["https://your-app.vercel.app","https://cinematch-*.vercel.app"]` |
 | `ENVIRONMENT` | `production` |
 
 5. Deploy. First build takes ~3 min. Subsequent deploys auto-trigger on push to `main`.
@@ -53,7 +53,7 @@ Render free tier spins down after 15 minutes of inactivity. Cold start takes ~10
 
 ---
 
-## Frontend — Vercel
+## Frontend: Vercel
 
 ### First deploy
 
@@ -71,7 +71,7 @@ Render free tier spins down after 15 minutes of inactivity. Cold start takes ~10
 
 ---
 
-## Database — Supabase
+## Database: Supabase
 
 ### First setup
 
@@ -117,9 +117,9 @@ The app runs at `http://localhost:3000`. Backend at `http://localhost:8000`.
 
 GitHub Actions (`.github/workflows/ci.yml`) runs on every push:
 
-1. `uv run ruff check app/` — Python lint
-2. `uv run mypy app` — Python types
-3. `uv run pytest --cov=app --cov-report=xml` — tests + coverage
-4. `gitleaks detect --source . --redact` — secret scan
+1. `uv run ruff check app/` (Python lint)
+2. `uv run mypy app` (Python types)
+3. `uv run pytest --cov=app --cov-report=xml` (tests + coverage)
+4. `gitleaks detect --source . --redact` (secret scan)
 
 Vercel and Render auto-deploy on push to `main`. Preview deploys on PRs.

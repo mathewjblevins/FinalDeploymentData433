@@ -1,4 +1,4 @@
-# CineMatch — Architecture
+# CineMatch: Architecture
 
 ## Overview
 
