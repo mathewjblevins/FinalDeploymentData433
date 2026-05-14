@@ -55,7 +55,7 @@ Note: Tyler Johnson and Joseph Scheele are listed as teammates on the course ros
 | 2026-05-10 | Joseph Scheele | Wrote pytest test suite: 24/24 tests passing; ruff + mypy clean |
 | 2026-05-11 | Mathew Blevins | Scaffolded Next.js 15 frontend: `package.json`, `tsconfig.json`, Tailwind config |
 | 2026-05-11 | Mathew Blevins | Built all frontend pages: landing, search, recommend/[movieId], library, login, about |
-| 2026-05-11 | Mathew Blevins | Built all frontend components: Header, Footer, SearchBar, MovieCard, MovieHero, RecommendationGrid |
+| 2026-05-11 | Joseph Scheele | Built all frontend components: Header, Footer, SearchBar, MovieCard, MovieHero, RecommendationGrid |
 | 2026-05-11 | Mathew Blevins | Wired CSP headers via `next.config.js`; implemented `lib/sanitize.ts` (DOMPurify wrapper) |
 | 2026-05-11 | Joseph Scheele | Architecture, security, deployment, cost, data, model, ai-usage |
 | 2026-05-11 | Mathew Blevins | Generated 13-slide pptxgenjs deck (`presentation/cinematch_milestone5.pptx`) |
