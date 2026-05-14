@@ -2,6 +2,8 @@
 
 Honest, commit-by-commit record of who did what. Per course policy, individual scores reflect individual contributions.
 
+This project was developed using Claude Code CLI running on Mathew's machine. Because all AI-assisted work ran through a single session on Mathew's account, all commits appear under his GitHub handle. The workflow for each team member was: Mathew directed Claude and handled deployment; Tyler contributed to architecture planning and repo setup; Joseph contributed to feature design and documentation review. The commit history does not reflect this split. See ai-usage.md for the full disclosure.
+
 ## Milestone 1: Project Proposal
 
 | Date | Contributor | Contribution |
