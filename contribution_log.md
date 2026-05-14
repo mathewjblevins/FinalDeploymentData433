@@ -10,7 +10,7 @@ Note: Tyler Johnson and Joseph Scheele are listed as teammates on the course ros
 
 | Date | Contributor | Contribution |
 |---|---|---|
-| Jan 2026 | Mathew Blevins | Project concept, TMDB API research, proposal write-up, submission |
+| Jan 2026 | Mathew Blevins, Joseph Scheele, Tyler Johnson | Project concept, TMDB API research, proposal write-up, submission |
 
 ---
 
