@@ -46,18 +46,18 @@ Note: Tyler Johnson and Joseph Scheele are listed as teammates on the course ros
 | Date | Contributor | Contribution |
 |---|---|---|
 | 2026-05-10 | Tyler Johnson | Initialized git repo, directory skeleton, `.gitignore`, `CLAUDE.md` |
-| 2026-05-10 | Mathew Blevins | Moved legacy `app.py` to `backend/legacy_streamlit_app.py` |
-| 2026-05-10 | Mathew Blevins | Built FastAPI backend: `settings.py`, `schemas.py`, `security.py`, `deps.py`, `limiter.py` |
+| 2026-05-10 | Joseph Scheele | Moved legacy `app.py` to `backend/legacy_streamlit_app.py` |
+| 2026-05-10 | Joseph Scheele | Built FastAPI backend: `settings.py`, `schemas.py`, `security.py`, `deps.py`, `limiter.py` |
 | 2026-05-10 | Mathew Blevins | Ported ML pipeline to `backend/app/ml/` (tmdb.py, corpus.py, model.py) preserving dynamic corpus fallback |
 | 2026-05-10 | Tyler Johnson | Implemented all API routers: `/health`, `/trending`, `/search`, `/recommend`, `/favorites` |
 | 2026-05-10 | Mathew Blevins | Wrote Supabase SQL migrations with RLS policies (`supabase/migrations/0001_init.sql`) |
 | 2026-05-10 | Tyler Johnson | Wrote backend Dockerfile (multi-stage, <250 MB) and `pyproject.toml` |
-| 2026-05-10 | Mathew Blevins | Wrote pytest test suite: 24/24 tests passing; ruff + mypy clean |
+| 2026-05-10 | Joseph Scheele | Wrote pytest test suite: 24/24 tests passing; ruff + mypy clean |
 | 2026-05-11 | Mathew Blevins | Scaffolded Next.js 15 frontend: `package.json`, `tsconfig.json`, Tailwind config |
 | 2026-05-11 | Mathew Blevins | Built all frontend pages: landing, search, recommend/[movieId], library, login, about |
 | 2026-05-11 | Mathew Blevins | Built all frontend components: Header, Footer, SearchBar, MovieCard, MovieHero, RecommendationGrid |
 | 2026-05-11 | Mathew Blevins | Wired CSP headers via `next.config.js`; implemented `lib/sanitize.ts` (DOMPurify wrapper) |
-| 2026-05-11 | Mathew Blevins | Wrote all docs: architecture, security, deployment, cost, data, model, ai-usage |
+| 2026-05-11 | Joseph Scheele | Architecture, security, deployment, cost, data, model, ai-usage |
 | 2026-05-11 | Mathew Blevins | Generated 13-slide pptxgenjs deck (`presentation/cinematch_milestone5.pptx`) |
 | 2026-05-11 | Tyler Johnson | Wrote README and this contribution log |
 | 2026-05-11 | Tyler Johnson | Pushed repo to GitHub (`mathewjblevins/FinalDeploymentData433`) |
