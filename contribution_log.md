@@ -41,7 +41,7 @@ Note: Tyler Johnson and Joseph Scheele are listed as teammates on the course ros
 
 ---
 
-## Milestone 5: Final Product (May 10-14, 2026)
+## Milestone 5: Final Product (May 2026)
 
 | Date | Contributor | Contribution |
 |---|---|---|
