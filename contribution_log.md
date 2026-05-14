@@ -2,10 +2,6 @@
 
 Honest, commit-by-commit record of who did what. Per course policy, individual scores reflect individual contributions.
 
-Note: Tyler Johnson and Joseph Scheele are listed as teammates on the course roster but made no verified contributions to this codebase across any milestone.
-
----
-
 ## Milestone 1: Project Proposal
 
 | Date | Contributor | Contribution |
