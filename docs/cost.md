@@ -46,6 +46,6 @@ At 5k DAU with a $55/mo infrastructure cost:
 
 ## Free Tier Caveats (slide-ready disclosures)
 
-1. **Render cold start:** Free web services spin down after 15 min of inactivity. First request after idle takes ~10s. Mitigated in demo by a Vercel cron that pings `/health` every 14 min.
+1. **Render cold start:** Free web services spin down after 15 min of inactivity. The first request after idle takes ~10s. A Vercel cron that pings `/health` every 14 min keeps the service warm during demos.
 2. **Supabase 50k MAU cap:** At scale, would upgrade to Pro ($25/mo) or move to self-hosted.
 3. **TMDB rate limits:** 40 requests/10s on the free tier. Our TTLCache (1h) eliminates ~80% of repeat calls.

@@ -18,13 +18,13 @@ provides Postgres, Auth, and Row-Level Security. Deployed on Vercel + Render.
 ## Rules you must not break
 1. **No secrets in code.** Read every secret from env via `pydantic-settings`
    (backend) or `process.env` (frontend). If a value belongs in a `.env`, it
-   belongs in `.env.example` too — with a placeholder.
+   belongs in `.env.example` too, with a placeholder.
 2. **No bypassing RLS.** Backend uses the user's JWT for all reads. Service-role
    key is only used in the corpus-refresh script.
 3. **No `dangerouslySetInnerHTML`** in frontend without a `safeHtml()` wrapper.
 4. **No `eval`, `exec`, or raw SQL strings.** Parameterize everything.
 5. **Don't widen CORS to `*`** in production config.
-6. **Don't pin every dep tightly** in `pyproject.toml` — Streamlit-cloud-style
+6. **Don't pin every dep tightly** in `pyproject.toml`. Streamlit-cloud-style
    build hangs were the v1 lesson. Pin only when a regression is observed.
 
 ## Conventions
@@ -59,7 +59,7 @@ DB (run from repo root, requires Supabase CLI):
   to keep cold-start under 8s on Render free tier. Don't move it back to import.
 - `/search` proxies TMDB; never call TMDB from the frontend.
 - The corpus is **augmented at runtime** when a user queries a movie not in the
-  preloaded set. Preserve this behavior — it's what makes search feel complete.
+  preloaded set. Preserve this behavior; it's what makes search feel complete.
   Implementation: `app/ml/corpus.py::ensure_movie()`.
 - Supabase JWT verification uses `SUPABASE_JWT_SECRET`, not the anon key.
 

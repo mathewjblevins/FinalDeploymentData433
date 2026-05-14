@@ -37,7 +37,7 @@ Cosine similarity measures the angle between two document vectors regardless of 
 ### Ranking
 
 Given a seed movie at position `pos` in the matrix:
-1. Extract row `sim_matrix[pos]` — cosine similarity to every other movie
+1. Extract row `sim_matrix[pos]`: cosine similarity to every other movie
 2. Remove self-similarity (index == pos)
 3. Sort descending; return top k (default k=12)
 
@@ -77,7 +77,7 @@ When a user queries a movie not in the corpus:
 3. Signals the model to rebuild the TF-IDF matrix
 4. Proceeds with scoring
 
-This means every query enriches the corpus — the model gets slightly better over the lifetime of a server instance.
+Every query enriches the corpus; the model gets slightly better over the lifetime of a server instance.
 
 **Trade-off:** Rebuild cost is O(n × 5000) for the TF-IDF fit, approximately 0.3s for an 800-movie corpus. Acceptable for a free-tier deployment.
 
@@ -94,6 +94,6 @@ This means every query enriches the corpus — the model gets slightly better ov
 
 ## k-Tuning Notes
 
-- k=12: balanced grid (4-column, 3-row) on desktop — enough variety without overwhelming
+- k=12: balanced grid (4-column, 3-row) on desktop; enough variety without overwhelming
 - k=5 was tested but felt sparse; users wanted more to scroll through
 - k=20 max (enforced by API Pydantic schema); beyond that, quality degrades rapidly as cosine scores approach 0

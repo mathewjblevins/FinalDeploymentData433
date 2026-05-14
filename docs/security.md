@@ -35,7 +35,7 @@ repos:
 
 Key function: user ID if authenticated, remote IP otherwise.
 
-**Verification:** `curl -X POST http://backend/recommend -d '{"movie_id":550,"k":3}' -s -o /dev/null -w "%{http_code}"` repeated 61× in a loop → last response is `429`.
+**Verification:** `curl -X POST http://backend/recommend -d '{"movie_id":550,"k":3}' -s -o /dev/null -w "%{http_code}"` repeated 61× in a loop; the last response is `429`.
 
 `X-RateLimit-Limit`, `X-RateLimit-Remaining`, `Retry-After` headers are present on every response.
 
@@ -50,14 +50,14 @@ Key function: user ID if authenticated, remote IP otherwise.
 2. Sign in as User A; add movie_id=550 ("Fight Club") to favorites via `POST /favorites`.
 3. Create User B (e.g., `userb@test.com`) in a separate browser/incognito session.
 4. Sign in as User B.
-5. Call `GET /favorites` with User B's JWT → response must contain `[]`.
+5. Call `GET /favorites` with User B's JWT; response must contain `[]`.
 6. As a double-check, run in Supabase SQL editor logged in as User B's role:
    ```sql
    select * from favorites;
    ```
    Result: `0 rows` (User A's row is invisible).
 
-**Result:** Confirmed — User B receives an empty favorites list. User A's data is completely isolated.
+**Result:** Confirmed: User B receives an empty favorites list. User A's data is completely isolated.
 
 **Screenshot:** `docs/security/rls-isolation.png` — shows the Supabase SQL editor returning 0 rows for User B's session.
 

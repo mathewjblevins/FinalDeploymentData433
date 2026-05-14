@@ -60,7 +60,7 @@ The originally planned TMDB 5000 Movies dataset was removed from Kaggle followin
 1. **Western catalog bias:** TMDB's most popular/top-rated lists skew toward English-language Hollywood releases. Non-English films are underrepresented in the preloaded corpus.
 2. **Overview quality variance:** Short overviews (taglines, placeholder text) produce poor TF-IDF features. Niche or older films are more likely to have thin metadata.
 3. **Cold-start for obscure titles:** The dynamic corpus fallback fetches missing movies from TMDB on demand, but their recommendations may be lower quality because they're scored against a corpus that doesn't include other niche films.
-4. **No collaborative signal:** Content-based only — ignores user behavior patterns. A user who loves horror but searches for "The Notebook" will get romance recommendations, not horror.
+4. **No collaborative signal:** Content-based only; user behavior patterns are ignored. A user who loves horror but searches for "The Notebook" will get romance recommendations, not horror.
 
 ### Planned improvements (v1.1)
 - Seed corpus with curated international films (Korean, French, Indian cinema)

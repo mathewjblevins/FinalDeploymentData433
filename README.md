@@ -1,6 +1,6 @@
 # CineMatch
 
-**CineMatch** is a content-based movie recommendation engine. Tell it a movie you love — it returns 12 similar titles ranked by semantic similarity using TF-IDF vectorization over TMDB metadata. No behavioral tracking, no black-box collaborative filter: the recommendation logic is fully explainable.
+**CineMatch** is a content-based movie recommendation engine. Tell it a movie you love and it returns 12 similar titles ranked by semantic similarity using TF-IDF vectorization over TMDB metadata. No behavioral tracking, no black-box collaborative filter: the recommendation logic is fully explainable.
 
 > Built for DATA 433 (Machine Learning & Data Mining) at Valparaiso University, Spring 2026.
 
@@ -41,7 +41,7 @@ App runs at **http://localhost:3000** · Backend at **http://localhost:8000** ·
 1. **Data** — Movie metadata fetched live from the [TMDB API](https://www.themoviedb.org) (overview, genres, ratings, posters).
 2. **Vectorization** — TF-IDF over a combined text field (overview + genres × 3 weighting).
 3. **Similarity** — Cosine similarity matrix built lazily on first request (keeps cold start < 8s).
-4. **Dynamic fallback** — If you search a movie not in the preloaded corpus, it's fetched from TMDB, appended, and the matrix rebuilds — so search always feels complete.
+4. **Dynamic fallback** — If you search a movie not in the preloaded corpus, it's fetched from TMDB, appended, and the matrix rebuilds, so search always feels complete.
 
 ---
 
@@ -62,10 +62,10 @@ App runs at **http://localhost:3000** · Backend at **http://localhost:8000** ·
 
 ## Security
 
-- No hardcoded secrets — all keys read from environment variables
-- Rate limiting — 30 req/min on search, 60 req/min on recommendations
-- RLS — User A cannot read User B's favorites (verified and documented in [docs/security.md](docs/security.md))
-- XSS defense — CSP headers + DOMPurify + bleach server-side sanitization
+- No hardcoded secrets: all keys read from environment variables
+- Rate limiting: 30 req/min on search, 60 req/min on recommendations
+- RLS: User A cannot read User B's favorites (verified and documented in [docs/security.md](docs/security.md))
+- XSS defense: CSP headers + DOMPurify + bleach server-side sanitization
 
 ---
 

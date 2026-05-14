@@ -33,10 +33,10 @@ TMDB v3 API (server-side only; browser never sees the key)
 
 ## Key Invariants
 
-1. **TMDB key lives only on Render** — never reaches the browser.
-2. **TF-IDF matrix is built lazily on first `/recommend` call**, not at import time. Keeps Render free-tier cold starts under 8s.
-3. **Dynamic corpus fallback** — if a queried `movie_id` isn't in the preloaded corpus, `corpus.py::ensure_movie()` fetches it from TMDB, appends the row, and signals the model to rebuild. This is what makes searches feel complete despite a small preload set.
-4. **CORS allowlist is exact** — production allows only the Vercel production URL and `cinematch-*.vercel.app` preview URLs.
+1. **TMDB key lives only on Render**: it never reaches the browser.
+2. **TF-IDF matrix is built lazily on first `/recommend` call**, not at import time. This keeps Render free-tier cold starts under 8s.
+3. **Dynamic corpus fallback**: if a queried `movie_id` isn't in the preloaded corpus, `corpus.py::ensure_movie()` fetches it from TMDB, appends the row, and signals the model to rebuild. This is what makes searches feel complete despite a small preload set.
+4. **CORS allowlist is exact**: production allows only the Vercel production URL and `cinematch-*.vercel.app` preview URLs.
 
 ## Component Responsibilities
 
@@ -45,13 +45,13 @@ TMDB v3 API (server-side only; browser never sees the key)
 | Component | Responsibility |
 |---|---|
 | `app/layout.tsx` | Dark theme, fonts, Header/Footer shell |
-| `app/page.tsx` | Landing — trending row (RSC, cached 1h) |
+| `app/page.tsx` | Landing: trending row (RSC, cached 1h) |
 | `app/search/page.tsx` | Client-side search with 250ms debounce |
 | `app/recommend/[movieId]/page.tsx` | Server-rendered recommendation page |
 | `app/library/page.tsx` | Authed-only favorites list |
 | `components/MovieCard.tsx` | Poster + metadata card with sanitized title |
 | `components/MovieHero.tsx` | Source movie detail with `safeHtml()` overview |
-| `lib/sanitize.ts` | DOMPurify wrapper — only approved HTML render path |
+| `lib/sanitize.ts` | DOMPurify wrapper; only approved HTML render path |
 | `lib/api.ts` | Typed fetcher to FastAPI; reads `NEXT_PUBLIC_API_URL` |
 | `next.config.js` | CSP headers, HSTS, X-Frame-Options |
 
@@ -59,7 +59,7 @@ TMDB v3 API (server-side only; browser never sees the key)
 
 | Module | Responsibility |
 |---|---|
-| `app/settings.py` | `pydantic-settings` — reads all secrets from env; fails loudly if missing |
+| `app/settings.py` | `pydantic-settings`: reads all secrets from env; fails loudly if missing |
 | `app/ml/tmdb.py` | Async TMDB client with TTLCache (1h) |
 | `app/ml/corpus.py` | In-memory movie DataFrame; lazy load + dynamic augmentation |
 | `app/ml/model.py` | TF-IDF + cosine similarity; lazy matrix build |

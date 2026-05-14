@@ -49,7 +49,7 @@ Render free tier spins down after 15 minutes of inactivity. Cold start takes ~10
 }
 ```
 
-`frontend/app/api/warmup/route.ts` — makes a `GET` to `${NEXT_PUBLIC_API_URL}/health`.
+`frontend/app/api/warmup/route.ts` makes a `GET` to `${NEXT_PUBLIC_API_URL}/health`.
 
 ---
 
